@@ -5,6 +5,8 @@ class Card < ApplicationRecord
   validates_presence_of :job_title
   validates_presence_of :image_url
   validates_presence_of :profile_url
+  has_many :user_cards
+  has_many :users, through: :user_cards
 
   def self.sort_deck
     Card.all.take(30)
