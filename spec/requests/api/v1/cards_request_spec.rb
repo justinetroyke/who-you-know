@@ -7,5 +7,8 @@ describe "Cards API" do
     get '/api/v1/cards'
 
     expect(response).to be_successful
+    cards = JSON.parse(response.body)
+
+    expect(cards.count).to eq(30)
   end
 end

@@ -3,6 +3,16 @@
     "coverage": {
       "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/card.rb": [
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/application_record.rb": [
@@ -44,6 +54,6 @@
         0
       ]
     },
-    "timestamp": 1536284494
+    "timestamp": 1536285626
   }
 }
