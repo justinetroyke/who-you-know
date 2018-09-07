@@ -13,14 +13,4 @@ RSpec.describe Card, type: :model do
   describe 'relationships' do
     it { should have_many(:users) }
   end
-
-  describe 'methods' do
-    it 'should return a deck of 30 cards to sort' do
-      create_list(:card, 35)
-
-      deck = Card.sort_deck
-
-      expect(deck.count).to eq(30)
-    end
-  end
 end

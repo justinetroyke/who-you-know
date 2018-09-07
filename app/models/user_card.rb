@@ -3,4 +3,8 @@ class UserCard < ApplicationRecord
   validates_presence_of :difficulty
   belongs_to :user
   belongs_to :card
+
+  def self.sort_deck
+    UserCard.where(difficulty: 'unsorted').take(30)
+  end
 end
