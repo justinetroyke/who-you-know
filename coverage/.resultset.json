@@ -10,6 +10,17 @@
         1,
         null
       ],
+      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/api/v1/cards_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
       "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/mailers/application_mailer.rb": [
         0,
         0,
@@ -17,10 +28,6 @@
         0
       ],
       "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/application_controller.rb": [
         0,
         0
       ],
@@ -37,6 +44,6 @@
         0
       ]
     },
-    "timestamp": 1536282429
+    "timestamp": 1536284494
   }
 }
