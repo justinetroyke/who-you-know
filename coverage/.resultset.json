@@ -20,14 +20,8 @@
         1,
         null
       ],
-      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/api/v1/cards_controller.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user_card.rb": [
         1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/application_controller.rb": [
         1,
         null
       ],
@@ -36,8 +30,14 @@
         null,
         null
       ],
-      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user_card.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/api/v1/cards_controller.rb": [
         1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/application_controller.rb": [
         1,
         null
       ],
@@ -86,6 +86,6 @@
         null
       ]
     },
-    "timestamp": 1536341218
+    "timestamp": 1536341466
   }
 }

@@ -10,6 +10,10 @@ RSpec.describe Card, type: :model do
     it { should validate_presence_of(:profile_url) }
   end
 
+  describe 'relationships' do
+    it { should have_many(:users) }
+  end
+
   describe 'methods' do
     it 'should return a deck of 30 cards to sort' do
       create_list(:card, 35)
