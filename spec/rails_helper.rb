@@ -14,7 +14,7 @@ end
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
-  
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true
@@ -29,3 +29,4 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
