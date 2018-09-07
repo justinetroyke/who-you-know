@@ -8,10 +8,12 @@ describe "Cards API" do
 
     expect(user_card.unsorted?).to be true
 
-    put "/api/v1/cards/#{user_card.id}?difficulty=medium"
+    put "/api/v1/user_cards/#{user_card.id}?difficulty=medium"
 
-    expect(user_card.unsorted?).to be false
-    expect(user_card.medium?).to be true
+    user_card = JSON.parse(response.body)
+
+    expect(user_card["difficulty"]).to_not eq("unsorted")
+    expect(user_card["difficulty"]).to eq("medium")
 
     expect(response).to have_http_status(200)
   end
