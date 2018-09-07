@@ -4,7 +4,7 @@ describe "Cards API" do
   it "updates a card's difficulty level" do
     user = create(:user)
     card = create(:card)
-    user_card = UserCard.create!(user: user, card: card)
+    user_card = UserCard.create!(user_id: user.id, card_id: card.id)
 
     expect(user_card.unsorted?).to be true
 

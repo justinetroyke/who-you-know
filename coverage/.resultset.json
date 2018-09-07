@@ -31,6 +31,16 @@
         1,
         null
       ],
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user.rb": [
+        1,
+        null,
+        null
+      ],
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user_card.rb": [
+        1,
+        null,
+        null
+      ],
       "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/mailers/application_mailer.rb": [
         null,
         null,
@@ -62,6 +72,6 @@
         null
       ]
     },
-    "timestamp": 1536338184
+    "timestamp": 1536338720
   }
 }

@@ -1,0 +1,3 @@
+class UserCard < ApplicationRecord
+
+end
