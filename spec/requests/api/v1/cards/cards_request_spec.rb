@@ -95,4 +95,40 @@ describe "Cards API" do
       expect(counts["hard"]).to eq(2)
     end
   end
+
+  context "User requests cards with hard difficulty level" do
+    it "returns a list of 12 cards, 2 easy, 2 medium and 8 hard" do
+      user = create(:user)
+      card = create(:card)
+
+      35.times do |num|
+        UserCard.create!(user_id: user.id, card_id: card.id)
+      end
+
+      10.times do |num|
+        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
+      end
+
+      10.times do |num|
+        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
+      end
+
+      10.times do |num|
+        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
+      end
+
+      get '/api/v1/cards?difficulty=hard'
+
+      expect(response).to have_http_status(200)
+      user_cards = JSON.parse(response.body)
+      expect(user_cards.count).to eq(12)
+
+      difficulties = user_cards.map { |card| card["difficulty"] }
+      counts = difficulties.inject(Hash.new(0)) { |total, level| total[level] += 1; total}
+
+      expect(counts["easy"]).to eq(2)
+      expect(counts["medium"]).to eq(2)
+      expect(counts["hard"]).to eq(8)
+    end
+  end
 end
