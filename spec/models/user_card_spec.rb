@@ -19,7 +19,7 @@ RSpec.describe UserCard, type: :model do
         UserCard.create!(user_id: user.id, card_id: card.id)
       end
 
-      deck = UserCard.sort_deck
+      deck = UserCard.sort_deck("unsorted")
 
       expect(deck.count).to eq(30)
       expect(deck.first[:difficulty]).to eq("unsorted")

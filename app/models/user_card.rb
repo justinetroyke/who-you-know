@@ -4,39 +4,20 @@ class UserCard < ApplicationRecord
   belongs_to :user
   belongs_to :card
 
-  def self.sort_deck(difficulty="unsorted")
-    if difficulty == "easy"
-      easy_deck
-    elsif difficulty == "medium"
-      medium_deck
-    elsif difficulty == "hard"
-      hard_deck
-    else
+  def self.sort_deck(difficulty)
+    if difficulty == "unsorted"
       UserCard.where(difficulty: "unsorted").take(30)
+    else
+      get_deck(difficulty)
     end
   end
 
-  def self.easy_deck
+  def self.get_deck(difficulty)
+    levels = ["easy", "medium", "hard"]
     deck = []
-    deck << UserCard.where(difficulty: "easy").take(8)
-    deck << UserCard.where(difficulty: "medium").take(2)
-    deck << UserCard.where(difficulty: "hard").take(2)
-    deck.flatten.shuffle
-  end
-
-  def self.medium_deck
-    deck = []
-    deck << UserCard.where(difficulty: "easy").take(2)
-    deck << UserCard.where(difficulty: "medium").take(8)
-    deck << UserCard.where(difficulty: "hard").take(2)
-    deck.flatten.shuffle
-  end
-
-  def self.hard_deck
-    deck = []
-    deck << UserCard.where(difficulty: "easy").take(2)
-    deck << UserCard.where(difficulty: "medium").take(2)
-    deck << UserCard.where(difficulty: "hard").take(8)
+    levels.delete(difficulty)
+    deck << UserCard.where(difficulty: difficulty).take(8)
+    levels.each { |level| deck << UserCard.where(difficulty: level).take(2) }
     deck.flatten.shuffle
   end
 end
