@@ -1,5 +1,6 @@
 class Api::V1::CardsController < ApplicationController
   def index
-    render json: UserCard.sort_deck
+    cards = UserCard.sort_deck(params[:difficulty])
+    render json: cards
   end
 end

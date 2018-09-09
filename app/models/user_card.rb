@@ -4,7 +4,19 @@ class UserCard < ApplicationRecord
   belongs_to :user
   belongs_to :card
 
-  def self.sort_deck
-    UserCard.where(difficulty: 'unsorted').take(30)
+  def self.sort_deck(difficulty="unsorted")
+    if difficulty == "easy"
+      easy_deck
+    else
+      UserCard.where(difficulty: "unsorted").take(30)
+    end
+  end
+
+  def self.easy_deck
+    deck = []
+    deck << UserCard.where(difficulty: "easy").take(8)
+    deck << UserCard.where(difficulty: "medium").take(2)
+    deck << UserCard.where(difficulty: "hard").take(2)
+    deck.flatten.shuffle
   end
 end

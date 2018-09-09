@@ -51,12 +51,12 @@ describe "Cards API" do
       user_cards = JSON.parse(response.body)
       expect(user_cards.count).to eq(12)
 
-      user_cards.map { |card| card.difficulty}
-      user_cards.inject(Hash.new(0)) { |total, level| total[level] += 1; total}
+      difficulties = user_cards.map { |card| card["difficulty"] }
+      counts = difficulties.inject(Hash.new(0)) { |total, level| total[level] += 1; total}
 
-      expect(user_cards["easy"]).to eq(8)
-      expect(user_cards["medium"]).to eq(2)
-      expect(user_cards["hard"]).to eq(2)
+      expect(counts["easy"]).to eq(8)
+      expect(counts["medium"]).to eq(2)
+      expect(counts["hard"]).to eq(2)
     end
   end
 end
