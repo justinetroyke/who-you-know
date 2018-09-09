@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/card.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/card.rb": [
         1,
         1,
         1,
@@ -14,43 +14,43 @@
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/application_record.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/user_card.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user_card.rb": [
         1,
         1,
         1,
         1,
         1,
         null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/api/v1/cards_controller.rb": [
+        1,
         1,
         2,
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/models/user.rb": [
-        1,
-        1,
-        null,
-        1,
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/application_controller.rb": [
         1,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/api/v1/cards_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/application_controller.rb": [
-        1,
-        null
-      ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/controllers/api/v1/user_cards_controller.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/controllers/api/v1/user_cards_controller.rb": [
         1,
         1,
         2,
@@ -66,7 +66,7 @@
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/mailers/application_mailer.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/mailers/application_mailer.rb": [
         null,
         null,
         null,
@@ -74,13 +74,13 @@
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/jobs/application_job.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/jobs/application_job.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/channels/application_cable/connection.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/channels/application_cable/connection.rb": [
         null,
         null,
         null,
@@ -88,7 +88,7 @@
         null,
         null
       ],
-      "/Users/justinetroyke/turing/4mod/projects/who-you-know-backend/app/channels/application_cable/channel.rb": [
+      "/Users/haleymesander/mod4/who-you-know/who-you-know-backend/app/channels/application_cable/channel.rb": [
         null,
         null,
         null,
@@ -97,6 +97,6 @@
         null
       ]
     },
-    "timestamp": 1536357127
+    "timestamp": 1536511513
   }
 }
