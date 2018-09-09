@@ -1,19 +1,29 @@
 require 'rails_helper'
 
 describe "Cards API" do
+  before :each do
+    user = create(:user)
+    card = create(:card)
+
+    35.times do |num|
+      UserCard.create!(user_id: user.id, card_id: card.id)
+    end
+
+    10.times do |num|
+      UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
+    end
+
+    10.times do |num|
+      UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
+    end
+
+    10.times do |num|
+      UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
+    end
+  end
+
   context 'User requests unsorted cards' do
     it "returns a list of 30 cards without a difficulty level" do
-      user = create(:user)
-      card = create(:card)
-
-      35.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
-      end
-
       get '/api/v1/cards'
 
       expect(response).to be_successful
@@ -26,25 +36,6 @@ describe "Cards API" do
 
   context "User requests cards with easy difficulty level" do
     it "returns a list of 12 cards, 8 easy, 2 medium and 2 hard" do
-      user = create(:user)
-      card = create(:card)
-
-      35.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
-      end
-
       get '/api/v1/cards?difficulty=easy'
 
       expect(response).to have_http_status(200)
@@ -62,25 +53,6 @@ describe "Cards API" do
 
   context "User requests cards with medium difficulty level" do
     it "returns a list of 12 cards, 2 easy, 8 medium and 2 hard" do
-      user = create(:user)
-      card = create(:card)
-
-      35.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
-      end
-
       get '/api/v1/cards?difficulty=medium'
 
       expect(response).to have_http_status(200)
@@ -98,25 +70,6 @@ describe "Cards API" do
 
   context "User requests cards with hard difficulty level" do
     it "returns a list of 12 cards, 2 easy, 2 medium and 8 hard" do
-      user = create(:user)
-      card = create(:card)
-
-      35.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
-      end
-
-      10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
-      end
-
       get '/api/v1/cards?difficulty=hard'
 
       expect(response).to have_http_status(200)
