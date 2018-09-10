@@ -7,5 +7,9 @@ class Card < ApplicationRecord
   validates_presence_of :profile_url
   has_many :user_cards
   has_many :users, through: :user_cards
-  
+
+  def self.retrieve_deck(card_ids)
+    card_ids.map { |id| Card.find(id) }
+  end
+
 end

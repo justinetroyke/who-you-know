@@ -28,7 +28,7 @@ describe "Cards API" do
 
       expect(response).to have_http_status(200)
       cards = JSON.parse(response.body)
-      user_card_1 = UserCard.find_by(card_id: cards.first.id)
+      user_card_1 = UserCard.find_by(card_id: cards.first["id"])
 
       expect(cards.count).to eq(30)
       expect(user_card_1['difficulty']).to eq("unsorted")
