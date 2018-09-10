@@ -26,11 +26,12 @@ describe "Cards API" do
     it "returns a list of 30 cards without a difficulty level" do
       get '/api/v1/cards'
 
-      expect(response).to be_successful
-      user_cards = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      cards = JSON.parse(response.body)
+      user_card_1 = UserCard.find_by(card_id: cards.first.id)
 
-      expect(user_cards.count).to eq(30)
-      expect(user_cards.first['difficulty']).to eq("unsorted")
+      expect(cards.count).to eq(30)
+      expect(user_card_1['difficulty']).to eq("unsorted")
     end
   end
 
