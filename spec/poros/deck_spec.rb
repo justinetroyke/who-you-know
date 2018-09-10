@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Deck, type: :model do
+RSpec.describe Deck do
   describe '#unsorted_deck)' do
     it 'should return a deck of 30 unsorted cards' do
       user = create(:user)
