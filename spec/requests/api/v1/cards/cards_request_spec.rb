@@ -68,4 +68,17 @@ describe "Cards API" do
       end
     end
   end
+
+  describe "User has 0 unsorted cards" do
+    context 'User requests unsorted cards' do
+      it "returns a 400 status and message" do
+        get '/api/v1/cards'
+
+        expect(response).to have_http_status(400)
+        returned = JSON.parse(response.body)
+
+        expect(returned.message).to eq("User has sorted all their cards.")
+      end
+    end
+  end
 end
