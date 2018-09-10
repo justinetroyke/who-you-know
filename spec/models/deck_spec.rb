@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Deck, type: :model do
-  describe '#get_cards("unsorted")' do
+  describe '#unsorted_deck)' do
     it 'should return a deck of 30 unsorted cards' do
       user = create(:user)
       card = create(:card)
@@ -11,7 +11,7 @@ RSpec.describe Deck, type: :model do
       end
 
       deck = Deck.new("unsorted")
-      cards = deck.get_cards
+      cards = deck.unsorted_deck
 
       expect(cards).to be_a(Array)
       expect(cards.count).to eq(30)
@@ -20,7 +20,7 @@ RSpec.describe Deck, type: :model do
     end
   end
 
-  describe '#get_cards(difficulty)' do
+  describe '#sorted_deck' do
     it 'should return a deck of 12 cards' do
       user = create(:user)
       card = create(:card)
@@ -42,7 +42,7 @@ RSpec.describe Deck, type: :model do
       end
 
       deck = Deck.new("easy")
-      cards = deck.get_cards
+      cards = deck.sorted_deck
 
       expect(cards).to be_a(Array)
       expect(cards.count).to eq(12)
