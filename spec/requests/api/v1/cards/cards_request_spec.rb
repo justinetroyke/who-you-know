@@ -77,7 +77,7 @@ describe "Cards API" do
         expect(response).to have_http_status(400)
         returned = JSON.parse(response.body)
 
-        expect(returned.message).to eq("User has sorted all their cards.")
+        expect(returned["message"]).to eq("User has sorted all their cards.")
       end
     end
   end
