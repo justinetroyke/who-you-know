@@ -81,4 +81,36 @@ describe "Cards API" do
       end
     end
   end
+
+  describe "User has less than 8 easy cards" do
+    context 'User requests an easy deck' do
+      it "returns 400 status and message" do
+        user = create(:user)
+        card = create(:card)
+
+        20.times do |num|
+          UserCard.create!(user_id: user.id, card_id: card.id)
+        end
+
+        5.times do |num|
+          UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
+        end
+
+        10.times do |num|
+          UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
+        end
+
+        10.times do |num|
+          UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
+        end
+
+        get '/api/v1/cards?difficulty=easy'
+
+        expect(response).to have_http_status(400)
+        returned = JSON.parse(response.body)
+
+        expect(returned["message"]).to eq("User must sort more cards.")
+      end
+    end
+  end
 end
