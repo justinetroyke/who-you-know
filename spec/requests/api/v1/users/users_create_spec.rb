@@ -10,7 +10,7 @@ describe "User API" do
                   id_token: '2983rhoifb98230porjdnecjbvg]20h9f-3u1ejowd'
                 }
 
-      post "/api/v1/users", params: payload.to_json
+      post "/api/v1/users", params: payload
       returned = JSON.parse(response.body)
 
       expect(User.all.count).to eq(1)
