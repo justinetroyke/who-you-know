@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Cards API" do
   describe "User has at least 30 unsorted, 8 easy, 8 medium and 8 hard cards" do
     before :each do
-      @user_1 = create(:user)
+      @user = create(:user)
       card = create(:card)
 
       35.times do |num|
