@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Cards API" do
   describe "User has at least 30 unsorted, 8 easy, 8 medium and 8 hard cards" do
     before :each do
-      @user = create(:user)
+      @user_1 = create(:user)
       card = create(:card)
 
       35.times do |num|
@@ -39,7 +39,7 @@ describe "Cards API" do
 
     context "User requests cards with a difficulty level" do
       it "returns a list of 12 cards" do
-        get '/api/v1/cards?difficulty=easy'
+        get "/api/v1/users/#{@user.id}/cards?difficulty=easy"
 
         expect(response).to have_http_status(200)
         cards = JSON.parse(response.body)
@@ -58,7 +58,7 @@ describe "Cards API" do
           UserCard.create!(user_id: user.id, card_id: card.id)
         end
 
-        get '/api/v1/cards'
+        get "/api/v1/users/#{user.id}/cards"
 
         expect(response).to have_http_status(200)
         cards = JSON.parse(response.body)
@@ -73,7 +73,9 @@ describe "Cards API" do
   describe "User has 0 unsorted cards" do
     context 'User requests unsorted cards' do
       it "returns a 400 status and message" do
-        get '/api/v1/cards'
+        user = create(:user)
+
+        get "/api/v1/users/#{user.id}/cards"
 
         expect(response).to have_http_status(400)
         returned = JSON.parse(response.body)
@@ -105,7 +107,7 @@ describe "Cards API" do
           UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
         end
 
-        get '/api/v1/cards?difficulty=easy'
+        get "/api/v1/users/#{user.id}/cards?difficulty=easy"
 
         expect(response).to have_http_status(400)
         returned = JSON.parse(response.body)
