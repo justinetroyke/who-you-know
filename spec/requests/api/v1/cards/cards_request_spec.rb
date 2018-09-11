@@ -3,29 +3,29 @@ require 'rails_helper'
 describe "Cards API" do
   describe "User has at least 30 unsorted, 8 easy, 8 medium and 8 hard cards" do
     before :each do
-      user = create(:user)
+      @user = create(:user)
       card = create(:card)
 
       35.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id)
+        UserCard.create!(user_id: @user.id, card_id: card.id)
       end
 
       10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 1)
+        UserCard.create!(user_id: @user.id, card_id: card.id, difficulty: 1)
       end
 
       10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 2)
+        UserCard.create!(user_id: @user.id, card_id: card.id, difficulty: 2)
       end
 
       10.times do |num|
-        UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
+        UserCard.create!(user_id: @user.id, card_id: card.id, difficulty: 3)
       end
     end
 
     context 'User requests unsorted cards' do
       it "returns a list of 30 cards without a difficulty level" do
-        get '/api/v1/cards'
+        get "/api/v1/users/#{@user.id}/cards"
 
         expect(response).to have_http_status(200)
         cards = JSON.parse(response.body)
@@ -33,6 +33,7 @@ describe "Cards API" do
 
         expect(cards.count).to eq(30)
         expect(user_card_1['difficulty']).to eq("unsorted")
+        expect(user_card_1['user_id']).to eq(@user.id)
       end
     end
 
