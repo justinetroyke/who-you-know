@@ -1,8 +1,9 @@
 class Deck
-  def initialize(difficulty)
+  def initialize(difficulty, user_id)
     @difficulty = difficulty
     @cards = []
     @levels = ["easy", "medium", "hard"]
+    @user_id = user_id
   end
 
   def get_cards
@@ -14,15 +15,15 @@ class Deck
   end
 
   def unsorted_deck
-    user_cards = UserCard.where(difficulty: "unsorted").take(30)
+    user_cards = UserCard.where(difficulty: "unsorted", user_id: @user_id).take(30)
     ids = user_cards.map { |card| card.card_id }
     ids.map { |id| Card.find(id) }
   end
 
   def sorted_deck
-    @cards << UserCard.where(difficulty: @difficulty).take(8)
+    @cards << UserCard.where(difficulty: @difficulty, user_id: @user_id).take(8)
     @levels.delete(@difficulty)
-    @levels.each { |level| @cards << UserCard.where(difficulty: level).take(2) }
+    @levels.each { |level| @cards << UserCard.where(difficulty: level, user_id: @user_id).take(2) }
     user_cards = @cards.flatten.shuffle
     ids = user_cards.map { |card| card.card_id }
     ids.map { |id| Card.find(id) }

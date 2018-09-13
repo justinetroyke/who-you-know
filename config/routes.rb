@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       end
       resources :cards, only: [:index]
       resources :user_cards, only: [:update]
+      resources :users, only: [:create] do
+        resources :cards, only: [:index]
+      end
     end
   end
 end
