@@ -10,7 +10,7 @@ RSpec.describe Deck do
         UserCard.create!(user_id: user.id, card_id: card.id)
       end
 
-      deck = Deck.new("unsorted")
+      deck = Deck.new("unsorted", user.id)
       cards = deck.unsorted_deck
 
       expect(cards).to be_a(Array)
@@ -41,7 +41,7 @@ RSpec.describe Deck do
         UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 3)
       end
 
-      deck = Deck.new("easy")
+      deck = Deck.new("easy", user.id)
       cards = deck.sorted_deck
 
       expect(cards).to be_a(Array)

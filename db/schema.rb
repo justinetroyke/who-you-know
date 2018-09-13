@@ -1,4 +1,4 @@
-first# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@ first# This file is auto-generated from the current state of the database. Inste
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_164340) do
+ActiveRecord::Schema.define(version: 2018_09_11_211312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2018_09_07_164340) do
     t.string "profile_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "difficulty", default: 0
   end
 
   create_table "user_cards", force: :cascade do |t|
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_164340) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "api_key"
+    t.string "id_token"
   end
 
   add_foreign_key "user_cards", "cards"
