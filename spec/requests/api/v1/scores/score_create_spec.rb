@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Scores API" do
   context "Required parameters are given" do
-    it "adds a deck score to the database and returns 201 status" do
+    it "adds a score to the database and returns 201 status and message" do
       expect(Score.all.count).to eq(0)
 
       post "/api/v1/scores?difficulty=medium&num_played=12&num_correct=6"
