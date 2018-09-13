@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-describe "Scores gsAPI" do
+describe "Scores API" do
   describe "User requests scores" do
     it "returns average scores for each difficulty level" do
       user = create(:user)
-      userScore.create!(user: user, difficulty: 1, num_played: 10, num_correct: 8)
-      Score.create!(user: user, difficulty: 1, num_played: 10, num_correct: 6)
-      Score.create!(user: user, difficulty: 2, num_played: 10, num_correct: 6)
-      Score.create!(user: user, difficulty: 2, num_played: 10, num_correct: 4)
-      Score.create!(user: user, difficulty: 3, num_played: 10, num_correct: 4)
-      Score.create!(user: user, difficulty: 3, num_played: 10, num_correct: 2)
+      user.scores.create!(difficulty: 1, num_played: 10, num_correct: 8)
+      user.scores.create!(difficulty: 1, num_played: 10, num_correct: 6)
+      user.scores.create!(difficulty: 2, num_played: 10, num_correct: 6)
+      user.scores.create!(difficulty: 2, num_played: 10, num_correct: 4)
+      user.scores.create!(difficulty: 3, num_played: 10, num_correct: 4)
+      user.scores.create!(difficulty: 3, num_played: 10, num_correct: 2)
 
       get "/api/v1/users/#{user.id}/scores"
 
