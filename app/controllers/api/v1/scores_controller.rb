@@ -10,6 +10,7 @@ class Api::V1::ScoresController < ApplicationController
 
   def index
     scores = Score.averages(score_params[:user_id])
+    render status: 200, json: scores.to_json
   end
 
   private

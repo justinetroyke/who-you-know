@@ -17,9 +17,9 @@ describe "Scores API" do
       scores = JSON.parse(response.body)
 
       expect(scores.count).to eq(3)
-      expect(scores["easy"]).to eq("70%")
-      expect(scores["medium"]).to eq("50%")
-      expect(scores["hard"]).to eq("30%")
+      expect(scores["easy"]).to eq("70.0%")
+      expect(scores["medium"]).to eq("50.0%")
+      expect(scores["hard"]).to eq("30.0%")
     end
   end
 end
