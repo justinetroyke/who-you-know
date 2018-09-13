@@ -3,6 +3,8 @@ class Api::V1::ScoresController < ApplicationController
     score = Score.new(score_params)
     if score.save
       render status: 201, json: { message: "Score successfully recorded." }
+    else
+      render status: 400, json: { message: "Some required score parameters are missing." }
     end
   end
 

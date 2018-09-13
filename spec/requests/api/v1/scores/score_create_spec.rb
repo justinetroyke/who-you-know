@@ -31,7 +31,7 @@ describe "Scores API" do
       expect(response).to have_http_status(400)
       returned = JSON.parse(response.body)
 
-      expect(returned["message"]).to eq("Some required score parameters are missing")
+      expect(returned["message"]).to eq("Some required score parameters are missing.")
       expect(Score.all.count).to eq(0)
       expect(user.scores.count).to eq(0)
     end
