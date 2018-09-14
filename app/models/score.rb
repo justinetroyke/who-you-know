@@ -6,7 +6,8 @@ class Score < ApplicationRecord
   def self.averages(user_id)
     levels = ["easy", "medium", "hard"]
     averages = levels.map { |level| self.calculate_average(level, user_id) }
-    { easy: "#{averages[0]}%", medium: "#{averages[1]}%", hard: "#{averages[2]}%"}
+    scores = { easy: "#{averages[0]}%", medium: "#{averages[1]}%", hard: "#{averages[2]}%"}
+    scores.each { |k,v| scores[k] = "No scores recorded." if v == "NaN%" }
   end
 
   def self.calculate_average(level, user_id)
