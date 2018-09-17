@@ -4,9 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create] do
         resources :scores, only: [:create, :index]
-        resources :cards, only: [:index]
+        resources :cards, only: [:index, :update]
       end
-      resources :user_cards, only: [:update]
     end
   end
 end
