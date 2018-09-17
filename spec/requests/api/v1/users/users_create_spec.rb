@@ -18,7 +18,7 @@ describe "User API" do
       expect(User.last.api_key).to eq("839rh0f23hnf0c9frpj3nr2[dc8o9rt")
       expect(User.last.id_token).to eq("2983rhoifb98230porjdnecjbvg]20h9f-3u1ejowd")
       expect(response).to have_http_status(201)
-      expect(returned["message"]).to eq("User created successfully.")
+      expect(returned["id"]).to eq(User.last.id)
     end
   end
 
