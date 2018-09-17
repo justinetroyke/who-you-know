@@ -55,7 +55,7 @@ describe "Cards API" do
         card = create(:card)
 
         20.times do |num|
-          UserCard.create!(user_id: user.id, card_id: card.id)
+          UserCard.create!(user_id: user.id, card_id: card.id, difficulty: 0)
         end
 
         get "/api/v1/users/#{user.id}/cards"
