@@ -1,8 +1,9 @@
 class LinkedInConnectionsService
 
-  def initialize(username, password)
+  def initialize(username, password, user_id)
     @username = username
     @password = password
+    @user = User.find_by(id: user_id)
   end
 
   def import_connections
@@ -68,7 +69,7 @@ class LinkedInConnectionsService
         else
           name = connection.css("span.mn-connection-card__name").text.split.join(" ")
           image_url = connection.css("div.presence-entity__image").attr("style").value.split[1].split('"')[1]
-          Card.create!(first_last_name: name, image_url: image_url)
+          @user.cards.create!(first_last_name: name, image_url: image_url)
         end
       end
     end
