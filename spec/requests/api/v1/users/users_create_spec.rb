@@ -36,4 +36,24 @@ describe "User API" do
       expect(returned["message"]).to eq("Missing required parameters.")
     end
   end
+
+  context "User posts LinkedIn user info with id_token that already exists" do
+    it "returns correct user id based on id_token" do
+      user1 = create(:user)
+
+      expect(User.all.count).to eq(1)
+
+      payload = {
+                  api_key: 'ncf03ejrcv901-0=2kemnvijporefwmndt',
+                  id_token: user1.id_token
+                }
+
+      post "/api/v1/users", params: payload
+      returned = JSON.parse(response.body)
+
+      expect(response).to have_http_status(200)
+      expect(User.all.count).to eq(1)
+      expect(returned["id"]).to eq(user1.id)
+    end
+  end
 end
