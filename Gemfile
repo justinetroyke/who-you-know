@@ -9,6 +9,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rspec-rails'
 gem 'active_model_serializers'
 gem 'rack-cors', require: 'rack/cors'
+gem 'selenium-webdriver'
+gem 'nokogiri'
+gem 'capybara'
+gem 'pry'
+gem 'chromedriver-helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -26,7 +26,7 @@ describe "User API" do
     it "returns 404 status and message that required parameters are missing" do
       expect(User.all.count).to eq(0)
 
-      payload = { id_token: '2983rhoifb98230porjdnecjbvg]20h9f-3u1ejowd' }
+      payload = { }
 
       post "/api/v1/users", params: payload
       returned = JSON.parse(response.body)
