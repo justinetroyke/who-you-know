@@ -25,6 +25,8 @@ group :development, :test do
   gem 'active_designer'
   gem 'shoulda-matchers'
   gem 'faker'
+  gem 'webmock'
+  gem 'faraday'
 end
 
 group :development do

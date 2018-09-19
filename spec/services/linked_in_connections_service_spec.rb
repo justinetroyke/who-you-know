@@ -1,4 +1,5 @@
 require "rails_helper"
+WebMock.allow_net_connect!
 
 describe "saves connections from linkedin to database" do
   it 'saves connections as cards' do
