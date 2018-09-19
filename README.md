@@ -54,7 +54,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 ## Deployments
-* Back end is deployed here with Heroku: https://who-you-know.herokuapp.com/
+* Back end is deployed here with Heroku: https://who-you-know-be.herokuapp.com/
 
 * To see the [React frontend app](https://github.com/tdberg21/who-you-know-FE) deployed with Heroku, visit https://who-you-know-fe.herokuapp.com/
 
