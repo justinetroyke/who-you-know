@@ -17,7 +17,7 @@ bUhPS3YzN0pSRW9rSHd2MmtoUWhWaXZ1BUy9r0DzjrThRhA1O5fzkp6xWkDqL1MOhQG9RiMYEXUB98Tm
 
     user_cards = User.find_by(id: user_id).cards
     expect(cards.count).to eq(6)
-    expect(cards.first[:first_last_name]).to eq("Ruth Brand")
+    expect(cards.first[:first_last_name]).to eq("Kevin Simpson")
     expect(user_cards.count).to eq(6)
   end
 end
