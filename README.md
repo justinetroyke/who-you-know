@@ -1,7 +1,11 @@
-#Who You Know
+# Who You Know
 
 ## Application Description
-Who You Know is a web application built with a React frontend and Rails API backend that allows a user to better learn the connections in their LinkedIn network.  After authenticating with LinkedIn OAuth, the user's connections are retrieved from LinkedIn. The user must first sort each connection into 3 categories(easy, medium, hard) based on how well they can identify the connection from  profile photo.  The user can then play a set of connections to practice identifying connections from their LinkedIn profile photos. Scores for each play and information about incorrect answers are recorded and displayed to the user when the play is completed.  Historical score information for each difficulty level is also available to the user.
+* Tech Stack: React frontend and Rails API backend.
+
+* Application Purpose: Allows a user to better learn the connections in their LinkedIn network.  
+
+* How It Works: After authenticating with LinkedIn OAuth, the user's connections are retrieved from LinkedIn. The user must first sort each connection into 3 categories(easy, medium, hard) based on how well they can identify the connection from  profile photo.  The user can then play a set of connections to practice identifying connections from their LinkedIn profile photos. Scores for each play and information about incorrect answers are recorded and displayed to the user when the play is completed.  Historical score information for each difficulty level is also available to the user.
 
 ## Initial Setup
 
@@ -60,11 +64,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Create User**
 ---
- Returns newly created user's id to be used in future api requests.
+&nbsp;&nbsp;&nbsp;&nbsp;Returns newly created user's id to be used in future api requests.
 
 * **URL**
 
- /api/v1/users?api_key={LinkedIn Access Token}&id_token={LinkedIn User Id Token}
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users?api_key={LinkedIn Access Token}&id_token={LinkedIn User Id Token}
 
 * **Method:**
 
@@ -85,11 +89,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Unsorted Connections**
 ---
- Returns 30 unsorted connections.
+&nbsp;&nbsp;&nbsp;&nbsp;Returns 30 unsorted connections.
 
 * **URL**
 
- /api/v1/users/{user_id}/cards
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards
 
 * **Method:**
 
@@ -130,11 +134,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Assign Difficulty Level to Connection**
 ---
- Update's a card's difficulty level.
+&nbsp;&nbsp;&nbsp;&nbsp;Update's a card's difficulty level.
 
 * **URL**
 
- /api/v1/users/{user_id}/cards/{card_id}?difficulty={difficulty_level}
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards/{card_id}?difficulty={difficulty_level}
 
 * **Method:**
 
@@ -152,11 +156,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Connections with Difficulty Level**
 ---
- Returns 12 connections: 8 within the given difficulty level and 2 in each of the other two difficulty levels.
+&nbsp;&nbsp;&nbsp;&nbsp;Returns 12 connections: 8 within the given difficulty level and 2 in each of the other two difficulty levels.
 
 * **URL**
 
- /api/v1/users/{user_id}/cards?difficulty={difficulty_level}
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards?difficulty={difficulty_level}
 
 * **Method:**
 
@@ -197,11 +201,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Record Score**
 ---
- Records a score after playing a set of connections.
+&nbsp;&nbsp;&nbsp;&nbsp;Records a score after playing a set of connections.
 
 * **URL**
 
- /api/v1/users/{user_id}/scores?difficulty={level}&num_played={num}&num_correct={num}
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores?difficulty={level}&num_played={num}&num_correct={num}
 
 * **Method:**
 
@@ -219,11 +223,11 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Score**
 ---
- Returns total percentages correct in each difficulty category.
+&nbsp;&nbsp;&nbsp;&nbsp;Returns total percentages correct in each difficulty category.
 
 * **URL**
 
- /api/v1/users/{user_id}/scores
+&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores
 
 * **Method:**
 
