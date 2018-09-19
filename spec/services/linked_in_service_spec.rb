@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'LinkedIn Service' do
   describe '#get_linkedin_id' do
     it "returns a user's unique linkedin id" do
-      user = create(:user)
+      user = create(:user, api_key: '839rh0f23hnf0c9frpj3nr2[dc8o9rt')
 
       stub_request(:get, "https://api.linkedin.com/v2/me/").
           with(
