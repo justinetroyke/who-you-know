@@ -74,7 +74,7 @@ describe 'LinkedIn Service' do
                               headers: {}
                              )
 
-      linkedin_service = LinkedInService.new(user)
+      linkedin_service = LinkedInService.new(user.api_key)
       actual = linkedin_service.get_linkedin_id
 
       expect(actual).to eq('yrZCpj2Z12')

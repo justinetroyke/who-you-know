@@ -1,9 +1,10 @@
 class Api::V1::UsersController < ApplicationController
   def create
-    if User.find_by(id_token: user_params[:id_token])
-      render status: 200, json: User.find_by(id_token: user_params[:id_token])
+    username = LinkedInService.new(user_params[:api_key]).get_linkedin_id
+    if User.find_by(username: username)
+      render status: 200, json: User.find_by(username: username)
     else
-      user = User.new(username: "nil", api_key: user_params[:api_key], id_token: user_params[:id_token])
+      user = User.new(username: username, api_key: user_params[:api_key], id_token: user_params[:id_token])
       if user.save
         render status: 201, json: user
       else

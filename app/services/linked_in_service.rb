@@ -1,6 +1,6 @@
 class LinkedInService
-  def initialize(user)
-    @api_key = user.api_key
+  def initialize(api_key)
+    @api_key = api_key
   end
 
   def get_linkedin_id
