@@ -64,15 +64,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Create User**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Returns newly created user's id to be used in future api requests.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns newly created user's id to be used in future api requests.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users?api_key={LinkedIn Access Token}&id_token={LinkedIn User Id Token}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users?api_key={LinkedIn Access Token}&id_token={LinkedIn User Id Token}
 
 * **Method:**
 
- `POST`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`POST`
 
 * **Success Response:**
 
@@ -89,15 +89,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Unsorted Connections**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Returns 30 unsorted connections.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;Returns 30 unsorted connections.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards
 
 * **Method:**
 
- `GET`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GET`
 
 * **Success Response:**
 
@@ -134,15 +134,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Assign Difficulty Level to Connection**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Update's a card's difficulty level.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update's a card's difficulty level.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards/{card_id}?difficulty={difficulty_level}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards/{card_id}?difficulty={difficulty_level}
 
 * **Method:**
 
- `PUT`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`PUT`
 
 * **Success Response:**
 
@@ -156,15 +156,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Connections with Difficulty Level**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Returns 12 connections: 8 within the given difficulty level and 2 in each of the other two difficulty levels.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns 12 connections: 8 within the given difficulty level and 2 in each of the other two difficulty levels.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards?difficulty={difficulty_level}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/cards?difficulty={difficulty_level}
 
 * **Method:**
 
- `GET`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GET`
 
 * **Success Response:**
 
@@ -201,15 +201,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Record Score**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Records a score after playing a set of connections.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Records a score after playing a set of connections.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores?difficulty={level}&num_played={num}&num_correct={num}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores?difficulty={level}&num_played={num}&num_correct={num}
 
 * **Method:**
 
- `POST`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`POST`
 
 * **Success Response:**
 
@@ -223,15 +223,15 @@ Once the server is running, visit API endpoints in your browser:
 
 **Retrieve Score**
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;Returns total percentages correct in each difficulty category.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns total percentages correct in each difficulty category.
 
 * **URL**
 
-&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/api/v1/users/{user_id}/scores
 
 * **Method:**
 
- `GET`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GET`
 
 * **Success Response:**
 
